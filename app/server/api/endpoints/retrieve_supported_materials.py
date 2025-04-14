@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.models.schemas import MaterialTypesListResponse, MaterialType
+from app.server.models.schemas import MaterialTypesListResponse, MaterialType
 
 router = APIRouter()
 

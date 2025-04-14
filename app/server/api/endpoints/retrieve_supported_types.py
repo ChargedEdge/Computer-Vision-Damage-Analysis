@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.models.schemas import DamageTypesListResponse, DamageType
+from app.server.models.schemas import DamageTypesListResponse, DamageType
 
 router = APIRouter()
 

@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.endpoints import analyse_damage, retrieve_results, supported_materials, supported_types
+from app.server.api.endpoints import analyse_damage, retrieve_results, supported_materials, supported_types
 
 
 
@@ -15,7 +15,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=True,     # Change if in production
     allow_methods=["*"],
     allow_headers=["*"]
 )

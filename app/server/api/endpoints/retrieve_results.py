@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from uuid import UUID
-from app.models.schemas import AnalysisResultResponse
+from app.server.models.schemas import AnalysisResultResponse
 
 
 router = APIRouter()

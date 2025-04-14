@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, UploadFile, File
 from PIL import Image
 from uuid import uuid4
-from app.models.schemas import AnalysisSubmissionResponse
+from app.server.models.schemas import AnalysisSubmissionResponse
 
 
 router = APIRouter()
