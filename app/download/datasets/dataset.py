@@ -1,5 +1,6 @@
 import os
 import shutil
+from tqdm import tqdm
 from sklearn.model_selection import train_test_split
 
 
@@ -18,8 +19,8 @@ def move_dataset(download_dir, model_data_dir, class_name):
     os.makedirs(validation_dir, exist_ok=True)
 
     # Copy images
-    for img in training_imgs:
+    for img in tqdm(training_imgs, desc=f"Processing {class_name} training images", unit="image"):
         shutil.copy(os.path.join(download_dir, img), os.path.join(train_dir, img))
 
-    for img in validation_imgs:
+    for img in tqdm(validation_imgs, desc=f"Processing {class_name} validation images", unit="image"):
         shutil.copy(os.path.join(download_dir, img), os.path.join(validation_dir, img))
