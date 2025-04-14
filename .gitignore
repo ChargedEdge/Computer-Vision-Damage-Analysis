@@ -66,4 +66,4 @@ coverage.xml
 
 
 # Model images
-app/model/data/*
+app/data/*

@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 
 
 
-def move_dataset(download_dir, model_dir, class_name):
+def move_dataset(download_dir, model_data_dir, class_name):
     # Collect all the images
     images = [f for f in os.listdir(download_dir) if f.lower().endswith(('.jpg', '.jpeg', '.png'))]
 
@@ -13,8 +13,8 @@ def move_dataset(download_dir, model_dir, class_name):
     training_imgs, validation_imgs = train_test_split(images, train_size=0.8, test_size=0.2, random_state=42)
 
     # Create the output folders
-    train_dir = os.path.join(model_dir, class_name, "train")
-    validation_dir = os.path.join(model_dir, class_name, "validation")
+    train_dir = os.path.join(model_data_dir, class_name, "train")
+    validation_dir = os.path.join(model_data_dir, class_name, "validation")
     os.makedirs(train_dir, exist_ok=True)
     os.makedirs(validation_dir, exist_ok=True)
 

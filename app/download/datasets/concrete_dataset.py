@@ -1,7 +1,6 @@
 import kagglehub
-# from dataset import move_dataset
-from app.download import move_dataset
-from app import MODEL_DATA_DIR
+from app.download.datasets import move_dataset
+from app.definitions import MODEL_DATA_DIR
 
 def download_concrete_dataset():
     path = kagglehub.dataset_download("arnavr10880/concrete-crack-images-for-classification")
