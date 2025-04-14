@@ -8,7 +8,6 @@ def move_dataset(download_dir, model_data_dir, class_name):
     # Collect all the images
     images = [f for f in os.listdir(download_dir) if f.lower().endswith(('.jpg', '.jpeg', '.png'))]
 
-
     # Split data for testing and validation
     training_imgs, validation_imgs = train_test_split(images, train_size=0.8, test_size=0.2, random_state=42)
 
