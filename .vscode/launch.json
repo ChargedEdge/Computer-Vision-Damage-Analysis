@@ -6,17 +6,25 @@
     "configurations": [
 
         {
-            "name": "Python Debugger: FastAPI",
+            "name": "FastAPI Server",
             "type": "debugpy",
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "app.main:app",
+                "app.server.main:app",
                 "--reload",
                 "--host", "localhost",
                 "--port", "8080"
             ],
             "jinja": true
+        },
+        {
+            "name": "Dataset Download",
+            "type": "python",
+            "request": "launch",
+            "module": "app.download.download_dataset",
+            "justMyCode": true,
+            "console": "integratedTerminal"
         }
     ]
 }

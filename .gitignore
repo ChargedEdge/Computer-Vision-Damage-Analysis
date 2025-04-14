@@ -60,3 +60,10 @@ coverage.xml
 .env
 .env.*
 
+
+# Kaggle
+.kaggle/kaggle.json
+
+
+# Model images
+app/model/data/*
