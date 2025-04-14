@@ -25,6 +25,14 @@
             "module": "app.download.download_datasets",
             "justMyCode": true,
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Train Model",
+            "type": "python",
+            "request": "launch",
+            "module": "app.model.train",
+            "justMyCode": true,
+            "console": "integratedTerminal"
         }
     ]
 }
