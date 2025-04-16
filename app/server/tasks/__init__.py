@@ -1,0 +1,1 @@
+from .analyse_image_task import analyse_image_task

@@ -26,6 +26,13 @@ SUPPORTED_MATERIAL_DAMAGES = {
 # Directories
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# Images
+IMAGE_UPLOAD_DIR = os.path.join(ROOT_DIR, "images/uploads")
+
+# Results
+RESULTS_DIR = os.path.join(ROOT_DIR, "results")
+
+
 # Separate Module Directories
 MODEL_DIR = os.path.join(ROOT_DIR, "model")
 
