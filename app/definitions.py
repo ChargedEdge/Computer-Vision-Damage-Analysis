@@ -44,4 +44,5 @@ CONCRETE_DAMAGE_DIR = os.path.join(MODEL_DAMAGE_DIR, "concrete")
 
 # Model file name defaults
 MATERIAL_CLASSIFIER_FILE_NAME = "material_classifier.pt"
-DAMAGE_CLASSIFIER_FILE_NAME = "damage_classifer.pt"
+#DAMAGE_CLASSIFIER_FILE_NAME = "damage_classifer.pt"
+DAMAGE_CLASSIFIER_FILE_NAME = lambda material : f"damage_{material}_model.pt"

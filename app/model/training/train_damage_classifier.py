@@ -7,7 +7,7 @@ from tqdm import tqdm
 from app.definitions import NUMBER_OF_EPOCHS, DAMAGE_CLASSIFIER_FILE_NAME
 
 
-def train_damage_classifier(model, train_loader, val_loader, epochs = NUMBER_OF_EPOCHS, device = 'cuda', save_path=DAMAGE_CLASSIFIER_FILE_NAME):
+def train_damage_classifier(material, model, train_loader, val_loader, epochs = NUMBER_OF_EPOCHS, device = 'cuda'):
     model.to(device)
 
     optimizer = optim.Adam(model.parameters(), lr=1e-4)
@@ -39,6 +39,7 @@ def train_damage_classifier(model, train_loader, val_loader, epochs = NUMBER_OF_
         print(f"Epoch {epoch + 1}/{epochs} - Val Loss: {total_loss:.4f}")
 
     # Save after training
+    save_path = DAMAGE_CLASSIFIER_FILE_NAME(material)
     torch.save(model.state_dict(), save_path)
     print(f"[Damage] Model saved to: {save_path}")
 

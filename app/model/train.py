@@ -16,7 +16,7 @@ train_material_classifier(material_model, material_train_loader, material_val_lo
 for material, damage_labels in SUPPORTED_MATERIAL_DAMAGES.items():
     damage_train_loader, damage_val_loader = get_dataloaders(f"{MODEL_DAMAGE_DIR}/damage/{material}", batch_size=32)
     damage_model = MaterialDamageClassifier(num_labels=len(damage_labels))
-    train_damage_classifier(damage_model, damage_train_loader, damage_val_loader)
+    train_damage_classifier(material, damage_model, damage_train_loader, damage_val_loader)
 
 
 
