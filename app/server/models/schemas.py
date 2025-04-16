@@ -19,6 +19,6 @@ class AnalysisSubmissionResponse(BaseModel):
 # Response upon retrieving using an ID
 class AnalysisResultResponse(BaseModel):
     material: str
-    damage_type: str
+    damage_type: list[str]
 
 

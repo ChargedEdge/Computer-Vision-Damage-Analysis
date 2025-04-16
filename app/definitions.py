@@ -30,7 +30,7 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 IMAGE_UPLOAD_DIR = os.path.join(ROOT_DIR, "images/uploads")
 
 # Results
-RESULTS_DIR = os.path.join(ROOT_DIR, "results")
+RESULTS_DIR = os.path.join(ROOT_DIR, "images/results")
 
 
 # Separate Module Directories
