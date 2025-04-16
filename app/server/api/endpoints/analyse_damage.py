@@ -3,14 +3,20 @@ from pathlib import Path
 import shutil
 from uuid import uuid4
 
-from app.server.models.schemas import AnalysisSubmissionResponse
+# from app.server.models.schemas import AnalysisSubmissionResponse
+from app.server.models import AnalysisSubmissionResponse, Results
 from app.server.tasks import analyse_image_task
-from app.definitions import IMAGE_UPLOAD_DIR
+from app.definitions import IMAGE_UPLOAD_DIR, RESULTS_DIR
 
 router = APIRouter()
 
+
 upload_dir = Path(IMAGE_UPLOAD_DIR)
 upload_dir.mkdir(parents=True, exist_ok=True)
+
+results_dir = Path(RESULTS_DIR)
+results_dir.mkdir(parents=True, exist_ok=True)
+
 
 @router.post("/analyse", response_model=AnalysisSubmissionResponse)
 async def analyse_material(file: UploadFile = File(...), background_tasks: BackgroundTasks = BackgroundTasks()):
@@ -31,6 +37,14 @@ async def analyse_material(file: UploadFile = File(...), background_tasks: Backg
 
     # Start image processing in background
     background_tasks.add_task(analyse_image_task, str(file_path))
+
+
+    # Create default results file
+    results = Results(id)
+    results_file_path = results_dir / f"{id}.json"
+    
+    with open(results_file_path, 'w') as f:
+        f.write(results.to_json())
     
 
     return AnalysisSubmissionResponse(id=id)
