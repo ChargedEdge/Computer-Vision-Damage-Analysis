@@ -18,6 +18,11 @@ SUPPORTED_MATERIAL_DAMAGES = {
 
 
 
+
+
+
+
+
 # Directories
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -37,3 +42,6 @@ CONCRETE_DAMAGE_DIR = os.path.join(MODEL_DAMAGE_DIR, "concrete")
 
 
 
+# Model file name defaults
+MATERIAL_CLASSIFIER_FILE_NAME = "material_classifier.pt"
+DAMAGE_CLASSIFIER_FILE_NAME = "damage_classifer.pt"

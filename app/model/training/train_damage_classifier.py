@@ -4,10 +4,10 @@ from torch import optim
 
 from tqdm import tqdm
 
-from app.definitions import NUMBER_OF_EPOCHS
+from app.definitions import NUMBER_OF_EPOCHS, DAMAGE_CLASSIFIER_FILE_NAME
 
 
-def train_damage_classifier(model, train_loader, val_loader, epochs = NUMBER_OF_EPOCHS, device = 'cuda', save_path="material_classifer.pt"):
+def train_damage_classifier(model, train_loader, val_loader, epochs = NUMBER_OF_EPOCHS, device = 'cuda', save_path=DAMAGE_CLASSIFIER_FILE_NAME):
     model.to(device)
 
     optimizer = optim.Adam(model.parameters(), lr=1e-4)

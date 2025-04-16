@@ -4,10 +4,10 @@ from torch import optim
 
 from tqdm import tqdm
 
-from app.definitions import NUMBER_OF_EPOCHS
+from app.definitions import NUMBER_OF_EPOCHS, MATERIAL_CLASSIFIER_FILE_NAME
 
 
-def train_material_classifier(model, train_loader, val_loader, epochs=NUMBER_OF_EPOCHS, device='cuda', save_path = "damage_classifier.pt"):
+def train_material_classifier(model, train_loader, val_loader, epochs=NUMBER_OF_EPOCHS, device='cuda', save_path = MATERIAL_CLASSIFIER_FILE_NAME):
     # model.to(device)
     
     model.to(device)
