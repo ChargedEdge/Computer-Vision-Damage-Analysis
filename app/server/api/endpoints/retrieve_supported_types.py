@@ -1,14 +1,13 @@
 from fastapi import APIRouter
-from app.server.models.schemas import DamageTypesListResponse, DamageType
+from app.server.models.schemas import DamageTypesListResponse, MaterialID
+
+from app.definitions import SUPPORTED_MATERIAL_DAMAGES
+
+from typing import List
 
 router = APIRouter()
 
 
-@router.get("/types", response_model=DamageTypesListResponse)
+@router.get("/types", response_model=dict[MaterialID, List[str]])
 async def get_supported_types():
-    # TODO: Put accepted damage types here
-    types = [
-        DamageType(id="water", name="Water")
-    ]
-
-    return { "damage_types": types }
+    return SUPPORTED_MATERIAL_DAMAGES

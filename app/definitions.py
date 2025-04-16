@@ -1,5 +1,24 @@
 import os
 
+# Constants
+NUMBER_OF_EPOCHS = 5
+
+# material and damage types
+SUPPORTED_MATERIALS = [
+    'wood',
+    'carpet',
+    'drywall'
+]
+
+SUPPORTED_MATERIAL_DAMAGES = {
+    'wood': [ 'water', 'fire', 'structural' ],
+    'carpet': ['water', 'fire'],
+    'drywall': ['water', 'fire', 'structural']
+}
+
+
+
+# Directories
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Separate Module Directories

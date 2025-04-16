@@ -1,6 +1,13 @@
 from pydantic import BaseModel
 from uuid import UUID
 from typing import List
+from typing_extensions import Literal
+
+from app.definitions import SUPPORTED_MATERIALS, SUPPORTED_MATERIAL_DAMAGES
+
+
+MaterialID = Literal.__getitem__(tuple(SUPPORTED_MATERIALS))
+
 
 # Response upon uploading image for analysis
 class AnalysisSubmissionResponse(BaseModel):
@@ -14,24 +21,4 @@ class AnalysisResultResponse(BaseModel):
     material: str
     damage_type: str
 
-
-
-class DamageType(BaseModel):
-    id: str
-    name: str
-    # description: str
-
-class DamageTypesListResponse(BaseModel):
-    damage_types: List[DamageType]
-
-
-
-
-class MaterialType(BaseModel):
-    id: str
-    name: str
-    # description: str
-
-class MaterialTypesListResponse(BaseModel):
-    materials: List[MaterialType]
 
